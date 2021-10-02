@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', [App\Http\Controllers\PageController::class,'posts']);
 Route::get('blog/{post}',  [App\Http\Controllers\PageController::class,'post'])->name('post');
@@ -19,4 +20,7 @@ Route::get('blog/{post}',  [App\Http\Controllers\PageController::class,'post'])-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('posts', 'App\Http\Controllers\Backend\PostController')
+    ->middleware('auth')
+    ->except('show');
