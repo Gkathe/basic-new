@@ -16,14 +16,14 @@
 
                     <form action= "{{ route('posts.store') }}" 
                         method= "POST" 
-                        enctype= "multipart/form-date"
+                        enctype= "multipart/form-data"
                     >
                         <div class="form-group">
-                            <label >Title*</label>
+                            <label >Titulo*</label>
                             <input type="text" name="title" class="form-control" required> 
                         </div>
                         <div class="form-group">
-                            <label >Image</label>
+                            <label >Imagen</label>
                             <input type="file" name="file"> 
                         </div>
                         <div class="form-group">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group">
                             <label >Contenido embebido</label>
-                            <textarea name="iframe"  class="form-control" required></textarea>
+                            <textarea name="iframe"  class="form-control" ></textarea>
                         </div>
                         <div class="form-group">
                             @csrf
